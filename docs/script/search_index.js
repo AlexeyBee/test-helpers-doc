@@ -1,26 +1,26 @@
 window.esdocSearchIndex = [
   [
-    "test-helpers-doc/src/utils.js~valid_types",
+    "test-helpers-doc/src/split.js~valid_types",
     "variable/index.html#static-variable-VALID_TYPES",
-    "<span>VALID_TYPES</span> <span class=\"search-result-import-path\">test-helpers-doc/src/utils.js</span>",
+    "<span>VALID_TYPES</span> <span class=\"search-result-import-path\">test-helpers-doc/src/split.js</span>",
     "variable"
   ],
   [
-    "test-helpers-doc/src/utils.js~isstring",
+    "test-helpers-doc/src/isstring.js~isstring",
     "function/index.html#static-function-isString",
-    "<span>isString</span> <span class=\"search-result-import-path\">test-helpers-doc/src/utils.js</span>",
+    "<span>isString</span> <span class=\"search-result-import-path\">test-helpers-doc/src/isString.js</span>",
     "function"
   ],
   [
-    "test-helpers-doc/src/utils.js~split",
+    "test-helpers-doc/src/split.js~split",
     "function/index.html#static-function-split",
-    "<span>split</span> <span class=\"search-result-import-path\">test-helpers-doc/src/utils.js</span>",
+    "<span>split</span> <span class=\"search-result-import-path\">test-helpers-doc/src/split.js</span>",
     "function"
   ],
   [
-    "test-helpers-doc/src/utils.js~sum",
+    "test-helpers-doc/src/sum.js~sum",
     "function/index.html#static-function-sum",
-    "<span>sum</span> <span class=\"search-result-import-path\">test-helpers-doc/src/utils.js</span>",
+    "<span>sum</span> <span class=\"search-result-import-path\">test-helpers-doc/src/sum.js</span>",
     "function"
   ],
   [
@@ -312,9 +312,21 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/utils.js",
-    "file/src/utils.js.html",
-    "src/utils.js",
+    "src/isstring.js",
+    "file/src/isString.js.html",
+    "src/isString.js",
+    "file"
+  ],
+  [
+    "src/split.js",
+    "file/src/split.js.html",
+    "src/split.js",
+    "file"
+  ],
+  [
+    "src/sum.js",
+    "file/src/sum.js.html",
+    "src/sum.js",
     "file"
   ]
 ]

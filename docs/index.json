@@ -567,7 +567,7 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/index.js",
-    "content": "export * from './utils';\n",
+    "content": "import { sum } from './sum';\nimport { isString } from './isString';\n\nexport {\n  sum,\n  isString,\n};\n",
     "static": true,
     "longname": "D:/credo/test-helpers-doc/src/index.js",
     "access": "public",
@@ -577,127 +577,32 @@
   {
     "__docId__": 49,
     "kind": "file",
-    "name": "src/utils.js",
-    "content": "/**\n * @summary Supported types\n * @type String[]\n * @constant\n * @private\n */\nconst VALID_TYPES = [\n  'string',\n  'number',\n  'boolean'\n];\n\n/**\n * @summary Sum two numbers\n * @function\n * @public\n *\n * @param {Number} x - first number\n * @param {Number} y - second number\n * @returns {Number} the sum of the two numbers\n *\n * @example\n * const result = math.sum(5, 3);\n * console.log(result);\n * > 8\n */\nconst sum = (x, y) => x + y;\n\n/**\n * @summary Check if a variable is a string\n * @function\n * @private\n *\n * @param {*} x - variable\n * @returns {Boolean} whether the variable is a string\n *\n * @example\n * if (isString('foo')) {\n *   console.log('The variable is a string');\n * }\n */\nconst isString = x => (typeof x === 'string' || x instanceof String);\n\n/**\n * @summary Split a string\n * @function\n * @public\n *\n * @param {String} string - input string\n * @param {String} [delimiter=' '] - delimiter\n * @returns {String[]} splitted string\n *\n * @example\n * const result = utils.split('foo bar baz');\n * console.log(result);\n * > [ 'foo', 'bar', 'baz' ]\n *\n * @example\n * const result = utils.split('hello_world', '_');\n * console.log(result);\n * > [ 'hello', 'world' ]\n */\nconst split = (string, delimiter = ' ') => string.split(delimiter);\n\nexport {\n  VALID_TYPES,\n  sum,\n  isString,\n  split,\n};\n",
+    "name": "src/isString.js",
+    "content": "/**\n * @summary Check if a variable is a string\n * @function\n * @private\n *\n * @param {*} x - variable\n * @returns {Boolean} whether the variable is a string\n *\n * @example\n * if (isString('foo')) {\n *   console.log('The variable is a string');\n * }\n */\nconst isString = x => (typeof x === 'string' || x instanceof String);\n\nexport { isString };\n",
     "static": true,
-    "longname": "D:/credo/test-helpers-doc/src/utils.js",
+    "longname": "D:/credo/test-helpers-doc/src/isString.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
     "__docId__": 50,
-    "kind": "variable",
-    "name": "VALID_TYPES",
-    "memberof": "src/utils.js",
-    "static": true,
-    "longname": "src/utils.js~VALID_TYPES",
-    "access": "private",
-    "export": true,
-    "importPath": "test-helpers-doc/src/utils.js",
-    "importStyle": "{VALID_TYPES}",
-    "description": "",
-    "lineNumber": 7,
-    "unknown": [
-      {
-        "tagName": "@summary",
-        "tagValue": "Supported types"
-      },
-      {
-        "tagName": "@constant",
-        "tagValue": ""
-      }
-    ],
-    "type": {
-      "nullable": null,
-      "types": [
-        "*"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 51,
-    "kind": "function",
-    "name": "sum",
-    "memberof": "src/utils.js",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/utils.js~sum",
-    "access": "public",
-    "export": true,
-    "importPath": "test-helpers-doc/src/utils.js",
-    "importStyle": "{sum}",
-    "description": "",
-    "examples": [
-      "const result = math.sum(5, 3);\nconsole.log(result);\n> 8"
-    ],
-    "lineNumber": 27,
-    "unknown": [
-      {
-        "tagName": "@summary",
-        "tagValue": "Sum two numbers"
-      },
-      {
-        "tagName": "@function",
-        "tagValue": ""
-      },
-      {
-        "tagName": "@returns",
-        "tagValue": "{Number} the sum of the two numbers"
-      }
-    ],
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Number"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "x",
-        "description": "first number"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "Number"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "y",
-        "description": "second number"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Number"
-      ],
-      "spread": false,
-      "description": "the sum of the two numbers"
-    }
-  },
-  {
-    "__docId__": 52,
     "kind": "function",
     "name": "isString",
-    "memberof": "src/utils.js",
+    "memberof": "src/isString.js",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/utils.js~isString",
+    "longname": "src/isString.js~isString",
     "access": "private",
     "export": true,
-    "importPath": "test-helpers-doc/src/utils.js",
+    "importPath": "test-helpers-doc/src/isString.js",
     "importStyle": "{isString}",
     "description": "",
     "examples": [
       "if (isString('foo')) {\n  console.log('The variable is a string');\n}"
     ],
-    "lineNumber": 42,
+    "lineNumber": 14,
     "unknown": [
       {
         "tagName": "@summary",
@@ -734,24 +639,67 @@
     }
   },
   {
+    "__docId__": 51,
+    "kind": "file",
+    "name": "src/split.js",
+    "content": "/**\n * @summary Supported types\n * @type String[]\n * @constant\n * @private\n */\nconst VALID_TYPES = [\n  'string',\n  'number',\n  'boolean'\n];\n\n/**\n * @summary Split a string\n * @function\n * @public\n *\n * @param {String} string - input string\n * @param {String} [delimiter=' '] - delimiter\n * @returns {String[]} splitted string\n *\n * @example\n * const result = split('foo bar baz');\n * console.log(result);\n * > [ 'foo', 'bar', 'baz' ]\n *\n * @example\n * const result = split('hello_world', '_');\n * console.log(result);\n * > [ 'hello', 'world' ]\n */\nconst split = (string, delimiter = ' ') => string.split(delimiter);\n\nexport {\n  VALID_TYPES,\n  split,\n};\n",
+    "static": true,
+    "longname": "D:/credo/test-helpers-doc/src/split.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 52,
+    "kind": "variable",
+    "name": "VALID_TYPES",
+    "memberof": "src/split.js",
+    "static": true,
+    "longname": "src/split.js~VALID_TYPES",
+    "access": "private",
+    "export": true,
+    "importPath": "test-helpers-doc/src/split.js",
+    "importStyle": "{VALID_TYPES}",
+    "description": "",
+    "lineNumber": 7,
+    "unknown": [
+      {
+        "tagName": "@summary",
+        "tagValue": "Supported types"
+      },
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
     "__docId__": 53,
     "kind": "function",
     "name": "split",
-    "memberof": "src/utils.js",
+    "memberof": "src/split.js",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/utils.js~split",
+    "longname": "src/split.js~split",
     "access": "public",
     "export": true,
-    "importPath": "test-helpers-doc/src/utils.js",
+    "importPath": "test-helpers-doc/src/split.js",
     "importStyle": "{split}",
     "description": "",
     "examples": [
-      "const result = utils.split('foo bar baz');\nconsole.log(result);\n> [ 'foo', 'bar', 'baz' ]",
-      "const result = utils.split('hello_world', '_');\nconsole.log(result);\n> [ 'hello', 'world' ]"
+      "const result = split('foo bar baz');\nconsole.log(result);\n> [ 'foo', 'bar', 'baz' ]",
+      "const result = split('hello_world', '_');\nconsole.log(result);\n> [ 'hello', 'world' ]"
     ],
-    "lineNumber": 63,
+    "lineNumber": 32,
     "unknown": [
       {
         "tagName": "@summary",
@@ -800,6 +748,80 @@
     }
   },
   {
+    "__docId__": 54,
+    "kind": "file",
+    "name": "src/sum.js",
+    "content": "/**\n * @summary Sum two numbers\n * @function\n * @public\n *\n * @param {Number} x - first number\n * @param {Number} y - second number\n * @returns {Number} the sum of the two numbers\n *\n * @example\n * const result = sum(5, 3);\n * console.log(result);\n * > 8\n */\nconst sum = (x, y) => x + y;\n\n\nexport { sum };\n",
+    "static": true,
+    "longname": "D:/credo/test-helpers-doc/src/sum.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 55,
+    "kind": "function",
+    "name": "sum",
+    "memberof": "src/sum.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/sum.js~sum",
+    "access": "public",
+    "export": true,
+    "importPath": "test-helpers-doc/src/sum.js",
+    "importStyle": "{sum}",
+    "description": "",
+    "examples": [
+      "const result = sum(5, 3);\nconsole.log(result);\n> 8"
+    ],
+    "lineNumber": 15,
+    "unknown": [
+      {
+        "tagName": "@summary",
+        "tagValue": "Sum two numbers"
+      },
+      {
+        "tagName": "@function",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number} the sum of the two numbers"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "x",
+        "description": "first number"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "y",
+        "description": "second number"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": "the sum of the two numbers"
+    }
+  },
+  {
     "kind": "index",
     "content": "# test-helpers-doc\n\n# Commands\n- `npm run clean` - Remove `lib/` directory\n- `npm run lint` - Run ESlint with airbnb-config\n- `npm run build` - Babel will transpile ES6 => ES5 and minify the code.\n- `npm run prepublish` - Hook for npm. Do all the checks before publishing your module.\n- `npm run doc` - Generate documentation to `doc/` directory.\n",
     "longname": "D:\\credo\\test-helpers-doc\\README.md",
@@ -809,7 +831,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"test-helpers-doc\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"./lib/index.js\",\n  \"scripts\": {\n    \"clean\": \"rimraf lib\",\n    \"lint\": \"eslint src src\",\n    \"build\": \"cross-env BABEL_ENV=production babel src --out-dir lib\",\n    \"prepublish\": \"npm run clean && npm run lint && npm run build\",\n    \"doc\": \"./node_modules/.bin/esdoc\"\n  },\n  \"files\": [\n    \"lib\",\n    \"src\"\n  ],\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AlexeyBee/test-helpers-doc.git\"\n  },\n  \"author\": \"AMAZ <AMAZ@mail.am> (AMAZ.am)\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/AlexeyBee/test-helpers-doc/issues\"\n  },\n  \"homepage\": \"https://github.com/AlexeyBee/test-helpers-doc#readme\",\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.26.0\",\n    \"babel-eslint\": \"^8.2.1\",\n    \"babel-plugin-add-module-exports\": \"^0.2.1\",\n    \"babel-polyfill\": \"^6.26.0\",\n    \"babel-preset-env\": \"^1.6.1\",\n    \"babel-preset-minify\": \"^0.3.0\",\n    \"cross-env\": \"^5.1.3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^4.16.0\",\n    \"eslint-config-airbnb\": \"^16.1.0\",\n    \"eslint-plugin-import\": \"^2.7.0\",\n    \"eslint-plugin-jsx-a11y\": \"^6.0.2\",\n    \"eslint-plugin-react\": \"^7.4.0\",\n    \"rimraf\": \"^2.6.2\"\n  }\n}\n",
+    "content": "{\n  \"name\": \"test-helpers-doc\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"./lib/index.js\",\n  \"scripts\": {\n    \"clean\": \"rimraf lib\",\n    \"lint\": \"eslint src src\",\n    \"build\": \"cross-env BABEL_ENV=production babel src --out-dir lib\",\n    \"prepublish\": \"npm run clean && npm run lint && npm run build\",\n    \"doc\": \"./node_modules/.bin/esdoc\",\n    \"test\": \"cross-env BABEL_ENV=development jest --watch\"\n  },\n  \"files\": [\n    \"lib\",\n    \"src\"\n  ],\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AlexeyBee/test-helpers-doc.git\"\n  },\n  \"author\": \"AMAZ <AMAZ@mail.am> (AMAZ.am)\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/AlexeyBee/test-helpers-doc/issues\"\n  },\n  \"homepage\": \"https://github.com/AlexeyBee/test-helpers-doc#readme\",\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.26.0\",\n    \"babel-eslint\": \"^8.2.1\",\n    \"babel-jest\": \"^23.6.0\",\n    \"babel-plugin-add-module-exports\": \"^0.2.1\",\n    \"babel-polyfill\": \"^6.26.0\",\n    \"babel-preset-env\": \"^1.6.1\",\n    \"babel-preset-minify\": \"^0.3.0\",\n    \"cross-env\": \"^5.1.3\",\n    \"enzyme\": \"^3.6.0\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^4.16.0\",\n    \"eslint-config-airbnb\": \"^16.1.0\",\n    \"eslint-plugin-import\": \"^2.7.0\",\n    \"eslint-plugin-jsx-a11y\": \"^6.0.2\",\n    \"eslint-plugin-react\": \"^7.4.0\",\n    \"jest\": \"^23.6.0\",\n    \"rimraf\": \"^2.6.2\"\n  },\n  \"jest\": {\n    \"testMatch\": [\n      \"<rootDir>/src/**/?(*.)(spec|test).{js}\"\n    ],\n    \"verbose\": true\n  }\n}\n",
     "longname": "D:\\credo\\test-helpers-doc\\package.json",
     "name": "package.json",
     "static": true,

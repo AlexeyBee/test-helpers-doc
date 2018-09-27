@@ -3,9 +3,19 @@
   "expectCount": 4,
   "actualCount": 4,
   "files": {
-    "src/utils.js": {
-      "expectCount": 4,
-      "actualCount": 4,
+    "src/isString.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/split.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/sum.js": {
+      "expectCount": 1,
+      "actualCount": 1,
       "undocumentLines": []
     }
   }

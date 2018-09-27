@@ -1,1 +1,7 @@
-export * from './utils';
+import { sum } from './sum';
+import { isString } from './isString';
+
+export {
+  sum,
+  isString,
+};
