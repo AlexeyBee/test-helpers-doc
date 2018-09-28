@@ -2,18 +2,18 @@
   "name": "test-helpers-doc",
   "version": "1.0.0",
   "description": "",
-  "main": "./lib/index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "clean": "rimraf lib",
+    "clean": "rimraf dist",
     "lint": "eslint src src",
-    "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
+    "build": "cross-env BABEL_ENV=production babel src --out-dir dist",
     "prepublish": "yarn run clean && yarn run lint && yarn run test && yarn run build",
     "doc": "./node_modules/.bin/esdoc",
     "test": "cross-env BABEL_ENV=development jest",
     "test-watch": "cross-env BABEL_ENV=development jest --watch"
   },
   "files": [
-    "lib",
+    "dist",
     "src"
   ],
   "repository": {
