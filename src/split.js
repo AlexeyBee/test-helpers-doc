@@ -4,7 +4,7 @@
  * @constant
  * @private
  */
-const VALID_TYPES = ['string', 'number', 'boolean']
+const VALID_TYPES = ['string', 'number', 'boolean', 'booleander']
 
 /**
  * @summary Split a string
