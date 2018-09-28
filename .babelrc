@@ -5,7 +5,6 @@
 				"env"
 			],
 			"plugins": [
-				"add-module-exports",
 				"syntax-dynamic-import",
 				"transform-function-bind",
 				"transform-class-properties",
@@ -19,16 +18,11 @@
 				"minify"
 			],
 			"plugins": [
-				"add-module-exports",
 				"syntax-dynamic-import",
 				"transform-function-bind",
 				"transform-class-properties",
 				"transform-decorators",
 				"transform-object-rest-spread"
-			],
-			"ignore": [
-				"**/*.test.js",
-				"**/*.spec.js"
 			]
 		}
 	}

@@ -1,4 +1,4 @@
-import isString from './isString'
+import { isString } from '../src'
 
 describe('isString', () => {
 	it('должно вернуть true', () => {

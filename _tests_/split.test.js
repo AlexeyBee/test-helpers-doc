@@ -1,4 +1,4 @@
-import { split } from './split'
+import { split } from '../src'
 
 describe('split', () => {
 	it("разбить строку 'foo bar baz'", () => {
