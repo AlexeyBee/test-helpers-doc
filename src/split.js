@@ -4,11 +4,7 @@
  * @constant
  * @private
  */
-const VALID_TYPES = [
-  'string',
-  'number',
-  'boolean'
-];
+const VALID_TYPES = ['string', 'number', 'boolean']
 
 /**
  * @summary Split a string
@@ -29,9 +25,6 @@ const VALID_TYPES = [
  * console.log(result);
  * > [ 'hello', 'world' ]
  */
-const split = (string, delimiter = ' ') => string.split(delimiter);
+const split = (string, delimiter = ' ') => string.split(delimiter)
 
-export {
-  VALID_TYPES,
-  split,
-};
+export { VALID_TYPES, split }

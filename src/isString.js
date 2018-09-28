@@ -8,9 +8,9 @@
  *
  * @example
  * if (isString('foo')) {
- *   console.log('The variable is a string');
+ *   console.log('The variable is a string')
  * }
  */
-const isString = x => (typeof x === 'string' || x instanceof String);
+const isString = x => typeof x === 'string' || x instanceof String
 
-export { isString };
+export default isString

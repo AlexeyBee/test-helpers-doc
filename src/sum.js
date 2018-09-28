@@ -8,11 +8,10 @@
  * @returns {Number} the sum of the two numbers
  *
  * @example
- * const result = sum(5, 3);
- * console.log(result);
+ * const result = sum(5, 3)
+ * console.log(result)
  * > 8
  */
-const sum = (x, y) => x + y;
+const sum = (x, y) => x + y
 
-
-export { sum };
+export default sum

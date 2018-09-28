@@ -3,13 +3,23 @@
         "development": {
             "presets": ["env"],
             "plugins": [
-                "add-module-exports"
+                "add-module-exports",
+								"syntax-dynamic-import",
+								"transform-function-bind",
+								"transform-class-properties",
+								"transform-decorators",
+								"transform-object-rest-spread"
             ]
         },
         "production": {
             "presets": ["env", "minify"],
             "plugins": [
-                "add-module-exports"
+                "add-module-exports",
+								"syntax-dynamic-import",
+								"transform-function-bind",
+								"transform-class-properties",
+								"transform-decorators",
+								"transform-object-rest-spread"
             ],
             "ignore": [
               "**/*.test.js",
