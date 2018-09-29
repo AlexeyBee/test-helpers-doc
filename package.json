@@ -5,6 +5,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "patch": "yarn version --patch",
+    "version:patch": "yarn build && git add . && yarn patch",
     "clean": "rimraf dist",
     "lint": "eslint src src _tests_",
     "build": "cross-env BABEL_ENV=production babel src --out-dir dist",
