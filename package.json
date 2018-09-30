@@ -1,8 +1,11 @@
 {
 	"name": "test-helpers-doc",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "",
 	"main": "./dist/index.js",
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"clean": "yarn clean:dist && yarn clean:docs",
 		"clean:dist": "rimraf dist",
