@@ -1,79 +1,78 @@
 {
-  "name": "test-helpers-doc",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./dist/index.js",
-  "scripts": {
-    "patch": "yarn version --patch",
-    "feature": "yarn version --minor",
-    "release": "yarn clean && yarn build",
-    "version:patch": "yarn build && git add . && yarn patch",
-    "version:feature": "yarn build && git add . && yarn feature",
-    "version:release": "yarn build && git add . && yarn release",
-    "clean": "rimraf dist",
-    "lint": "eslint src src _tests_",
-    "build": "babel src --out-dir dist",
-    "prepublish": "yarn clean && yarn lint && yarn test && yarn build",
-    "doc": "./node_modules/.bin/esdoc",
-    "test": "jest",
-    "test-watch": "jest --watch"
-  },
-  "files": [
-    "dist",
-    "src"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlexeyBee/test-helpers-doc.git"
-  },
-  "author": "AMAZ <AMAZ@mail.am> (AMAZ.am)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AlexeyBee/test-helpers-doc/issues"
-  },
-  "homepage": "https://github.com/AlexeyBee/test-helpers-doc#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-decorators": "^6.24.1",
-    "babel-plugin-transform-function-bind": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "esdoc": "^1.1.0",
-    "esdoc-standard-plugin": "^1.0.0",
-    "eslint": "^5.6.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-prettier": "^2.7.0",
-    "eslint-plugin-react": "^7.4.0",
-    "husky": "^1.0.1",
-    "jest": "^23.6.0",
-    "lint-staged": "^7.3.0",
-    "prettier": "^1.14.3",
-    "rimraf": "^2.6.2"
-  },
-  "jest": {
-    "testMatch": [
-      "<rootDir>/_tests_/**/?(*.)(spec|test).{js}"
-    ],
-    "verbose": true
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && yarn test",
-      "post-commit": "git update-index --again"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json}": [
-      "prettier --write",
-      "git add"
-    ]
-  }
+	"name": "test-helpers-doc",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./dist/index.js",
+	"scripts": {
+		"clean": "yarn clean:dist && yarn clean:docs",
+		"clean:dist": "rimraf dist",
+		"clean:docs": "rimraf docs",
+		"build": "yarn build:dist && yarn build:docs",
+		"build:dist": "babel src --out-dir dist",
+		"build:docs": "./node_modules/.bin/esdoc",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"lint": "eslint src src _tests_",
+		"patch": "yarn version --patch",
+		"feature": "yarn version --minor",
+		"release": "yarn clean && yarn build",
+		"version:patch": "yarn build && git add . && yarn patch",
+		"version:feature": "yarn build && git add . && yarn feature",
+		"version:release": "yarn build && git add . && yarn release"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AlexeyBee/test-helpers-doc.git"
+	},
+	"author": "AMAZ <AMAZ@mail.am> (AMAZ.am)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/AlexeyBee/test-helpers-doc/issues"
+	},
+	"homepage": "https://github.com/AlexeyBee/test-helpers-doc#readme",
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-eslint": "^10.0.1",
+		"babel-jest": "^23.6.0",
+		"babel-plugin-syntax-dynamic-import": "^6.18.0",
+		"babel-plugin-transform-class-properties": "^6.24.1",
+		"babel-plugin-transform-decorators": "^6.24.1",
+		"babel-plugin-transform-function-bind": "^6.22.0",
+		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"babel-polyfill": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-minify": "^0.5.0",
+		"esdoc": "^1.1.0",
+		"esdoc-standard-plugin": "^1.0.0",
+		"eslint": "^5.6.1",
+		"eslint-config-airbnb": "^17.1.0",
+		"eslint-config-prettier": "^3.1.0",
+		"eslint-plugin-import": "^2.7.0",
+		"eslint-plugin-jsx-a11y": "^6.0.2",
+		"eslint-plugin-prettier": "^2.7.0",
+		"eslint-plugin-react": "^7.4.0",
+		"husky": "^1.0.1",
+		"jest": "^23.6.0",
+		"lint-staged": "^7.3.0",
+		"prettier": "^1.14.3",
+		"rimraf": "^2.6.2"
+	},
+	"jest": {
+		"testMatch": [
+			"<rootDir>/_tests_/**/?(*.)(spec|test).{js}"
+		],
+		"verbose": true
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged && yarn test",
+			"post-commit": "git update-index --again"
+		}
+	},
+	"lint-staged": {
+		"*.{js,json}": [
+			"prettier --write",
+			"git add"
+		]
+	}
 }
