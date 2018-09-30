@@ -1,29 +1,12 @@
 {
-	"env": {
-		"development": {
-			"presets": [
-				"env"
-			],
-			"plugins": [
-				"syntax-dynamic-import",
-				"transform-function-bind",
-				"transform-class-properties",
-				"transform-decorators",
-				"transform-object-rest-spread"
-			]
-		},
-		"production": {
-			"presets": [
-				"env",
-				"minify"
-			],
-			"plugins": [
-				"syntax-dynamic-import",
-				"transform-function-bind",
-				"transform-class-properties",
-				"transform-decorators",
-				"transform-object-rest-spread"
-			]
-		}
-	}
+	"presets": [
+		"env"
+	],
+	"plugins": [
+		"syntax-dynamic-import",
+		"transform-function-bind",
+		"transform-class-properties",
+		"transform-decorators",
+		"transform-object-rest-spread"
+	]
 }
